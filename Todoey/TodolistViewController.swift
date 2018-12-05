@@ -11,12 +11,20 @@ import UIKit
 class TodolistViewController: UITableViewController {
     
     var itemArray = ["Find Mike", "Buy Eggos", "Destroy something"]
+    
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
+            itemArray = items
+        }
+        
     }
     //MARK - TableView Datasource Methods
+    
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
@@ -48,7 +56,7 @@ class TodolistViewController: UITableViewController {
             
             self.itemArray.append(textField.text!)
             //this what happens when button is pressed.
- 
+            self.defaults.set(self.itemArray, forKey: "TodoListArray")
             self.tableView.reloadData()
         }
         alert.addTextField { (alertTextField) in
