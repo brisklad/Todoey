@@ -48,7 +48,7 @@
             </objects>
             <point key="canvasLocation" x="-49" y="10"/>
         </scene>
-        <!--Items-->
+        <!--Todolist View Controller-->
         <scene sceneID="Fkz-aa-JW9">
             <objects>
                 <tableViewController id="HjN-0F-DBg" customClass="TodolistViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
@@ -79,7 +79,7 @@
                             <outlet property="delegate" destination="HjN-0F-DBg" id="wpb-QJ-S36"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Items" id="0lD-ax-YAp">
+                    <navigationItem key="navigationItem" id="0lD-ax-YAp">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="270-up-yqL">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -87,6 +87,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="0lD-ax-YAp" id="ej4-eC-HdB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpV-nq-efR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
